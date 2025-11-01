@@ -9,7 +9,8 @@ router.get("/", async (req, res) => {
     const questions = await Question.find();
     res.json(questions);
   } catch (error) {
-    res.status(500).json({ message: "Server xətası" });
+    console.log({error})
+    res.status(500).json({ message: error });
   }
 });
 
